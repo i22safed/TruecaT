@@ -1,3 +1,3 @@
 # TruecaT
 
-Programación Web - TruecaT
+Proyecto para la asignatura de Programación Web 
