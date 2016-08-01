@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+
+	<title>TruecaT - Trueques y algo mas</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		{% block tpagina %}
+
+    <h1>Trueca T</h1>
+
+		{% endblock %}
+	</div>
+
+	<div id="seccion">
+		{% block title %}
+
+		{% endblock %}
+	</div>
+
+	<div id="navigation">
+
+    {% block sidebar %}
+		<ul>
+			<li><b><a href="/">Inicio</a></b></li>
+			<li><b><a href="/articulos">Anuncios</a></b></li>
+			<li><b><a href="/busqueda">B&uacute;squeda</a></b></li>
+			<!--<li><b><a href="/usuarios">Usuarios</a></b></li>-->
+			{% if not user.is_authenticated %}
+		    	<li><b><a href="/ingresar">Login</a></b></li>
+              	<li><b><a href="/usuario/nuevo">Registrar</a></b></li>
+
+			{% else %}
+			  	<li><b><a href="/buzon">Buzon de Correo</a></b></li>
+				<li><b><a href="/privado">Perfil</a></b></li>
+				<li><b><a href="/cerrar">Logout</a></b></li>
+			{% endif %}
+		</ul>
+		{% endblock %}
+	</div>
+	<div id="content-container">
+		<div id="section-navigation">
+			{% block section-navigation %}
+
+			{% endblock %}
+		</div>
+		<div id="content">
+			{% block content %}
+			<h2></h2>
+			<p>Página web dedicada al intercambio de productos que ya no utilizamos o ya se nos han quedado anticuados, siempre y cuando estén en buenas condiciones.</p>
+			<p>¿Tienes algo que ya no utilices y no sabes qué hacer con él? Pon tu anuncio en nuestra página y podrás tener la oportunidad de cambiarlo por algo de similar valor, ¿a qué esperas?, ya podrías tenerlo fuera de casa.¡Que otra cosa ocupe su espacio!</p>
+			<h3>Nota:</h3>
+			<p>Cuando un artículo se haya vendido contacte con administrador@cambiamelo.es para borrar los anuncios ya tramitados.</p>
+			{% endblock %}
+		</div>
+		<div id="aside">
+			{% block aside %}
+			<h3></h3>
+			{% endblock %}
+		</div>
+		<div id="footer">
+			{% block footer %}
+			Copyright © Site David Sanchez Fernandez, 2015-2016
+			{% endblock %}
+		</div>
+	</div>
+</div>
+
+
+
+</body></html>

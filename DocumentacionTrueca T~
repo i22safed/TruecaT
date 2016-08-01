@@ -30,14 +30,8 @@
 
 	· Crear el modelo de trueque:
 	
-		- Titulo
-		- Imagen
-		- Usuario
-		- Provincia
-		- Categoria
-		- Fecha
-		- Descripcion
-		- Oferta
-		- Numero
-		- Correo
-		
+		- categoria
+		- nombre del trueque
+		- valor estimado 
+		- descripción 
+		- oferta

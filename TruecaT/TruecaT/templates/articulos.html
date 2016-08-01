@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+	<h4>Lista de art&iacute;culos para cambiar</h4>
+
+{% endblock %}
+
+{% block content %}
+	<a href='/articulo/nuevo'>Agregar un anuncio
+	<img src='{{STATIC_URL}}/media/iconos/anadir.png' width="30px" height="30px">
+	</a>
+	<h3>Listado de todos los art&iacute;culos:</h3>
+		<ul>
+			{% for dato in articulos %}
+				<li><a href="/articulo/{{dato.id}}">{{dato.titulo}}</a></li>
+			{% endfor %}
+		</ul>
+	{% if articulos.has_previous %}
+		<a href="?page={{articulos.previous_page_number}}"><img src='{{STATIC_URL}}/media/iconos/prev.png' width="30px" height="30px"></a>
+	{% endif %}
+	<span>Pagina {{articulos.number}} de {{articulos.paginator.num_pages}}</span>
+	{% if articulos.has_next %}
+		<a href="?page={{articulos.next_page_number}}"><img src='{{STATIC_URL}}/media/iconos/next.png' width="30px" height="30px"></a>
+	{% endif %}
+{% endblock %}
