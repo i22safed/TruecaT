@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+	{% block title %}
+		<h4>Detalles del Art&iacute;culo</h4>
+	{% endblock %}
+
+	{% block content %}
+		<h2>{{articulo.titulo}}</h2>
+		<p>Fecha de publicaci&oacute;n: {{articulo.fecha}}</p>
+		<img src='{{MEDIA_URL}}{{articulo.imagen}}' WIDTH=600 HEIGHT=450 >
+
+		<ul>
+			<li>Provincia: {{articulo.Provincia}}</li>
+			<li>Categor&iacute;a: {{articulo.Categoria}}</li>
+		</ul>
+		<h1>Descripcion del articulo</h1>
+		<texarea rows="8" cols="150" disabled="true">
+			{{articulo.descripcion_articulo}}
+		</textarea>
+
+		<h1>Lo cambio por:</h1>
+		<texarea rows="8" cols="150" disabled="true">
+			{{articulo.descripcion_que_quiero}}
+		</textarea>
+
+	{% if user.is_authenticated %}
+		<h3>Datos del anunciante:</h3>
+		<b>Usuario: <a href="/usuario/{{articulo.usuario.id}}">{{articulo.usuario.username}}</a></b><br>
+		<b>Teléfono de contacto:</b> {{articulo.numero}}<br>
+		<b>Correo de contacto:</b> {{articulo.usuario.email}}<br>
+
+
+
+
+
+			<form action="/modificar/{{articulo.id}}"><input type="submit" value=Modificar></form margin=0>
+			<form action="/eliminar/{{articulo.id}}"><input type="submit" value=Eliminar></form>
+
+			{% endif %}
+
+
+		<h3>Comentarios</h3>
+		{% for item in comentarios %}
+		<div class="comentario">
+			<tr>Escrito por <b>{{item.usuario}}</b> el {{item.fecha}} </tr><br>
+				<td><p>{{item.coment}} <p><td>
+		</div>
+		<br>
+		{% empty %}
+			<p>No hay ningun comentario.</p>
+		{% endfor %}
+			{% if user.is_authenticated %}
+				<br><form action="/comentario/{{articulo.id}}"><input type="submit" value="Nuevo comentario"r></form>
+	{% endif %}
+	{% endblock %}

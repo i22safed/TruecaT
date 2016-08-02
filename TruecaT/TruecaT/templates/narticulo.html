@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+	{% block content %}
+		<form id='formulario' method='post' enctype='multipart/form-data' action=''>
+			{% csrf_token %}<table>{{formulario.as_p}}</table>
+			<p><input type='submit' value='Enviar'/></p>
+		</form>
+	{% endblock %}

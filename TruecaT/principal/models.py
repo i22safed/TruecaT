@@ -23,7 +23,7 @@ class Categoria(models.Model):
 
 class Articulo(models.Model):
 
-    nombre = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=100)
     Categoria = models.ForeignKey(Categoria)
     imagen = models.ImageField(upload_to = 'img',verbose_name = 'Imagen', null = True, blank = True)
     descripcion = models.TextField()
@@ -34,4 +34,21 @@ class Articulo(models.Model):
     numero = models.IntegerField()
 
     def __unicode__(self):
-        return self.nombre
+        return self.titulo
+
+class Comentario(models.Model):
+    articulo = models.ForeignKey(Articulo)
+    usuario = models.ForeignKey(User)
+    coment = models.TextField(null = True, blank = True, help_text = 'Escriba aqui su comentario',
+    verbose_name = 'Comentario')
+    fecha = models.DateField(auto_now_add = True, blank = True)
+
+    def __unicode__(sefl):
+        return self.coment
+
+class Mensaje(models.Model):
+    fromu = models.ForeignKey( User, related_name = 'fromu', blank = True, null = True)
+    to = models.ForeignKey( User, related_name = 'to', blank = True, null = True)
+    date = models.DateField ( auto_now_add = True, blank = True)
+    texto = models.TextField()
+    leido = models.BooleanField(default = True)
