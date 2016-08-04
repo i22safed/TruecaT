@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}<h3>Logueo de usuario</h3>{% endblock %}
+{% block content %}
+	<form id='form' method='post' action=''>{% csrf_token %}
+		<table>{{formulario}}</table>
+		<p><input type='submit' value='Ingresar' /></p>
+	</form>
+	<p><a href='/usuario/nuevo' title="Image 1"><img src="{{STATIC_URL}}/media/iconos/registro.jpg" alt="Image 1" width="60" height="60"/></a></p>
+{% endblock %}
+
+	<form id='form' method='post' action=''>{% csrf_token %}
+	    <table class='formTable'>{{formulario}}</table>
+		<p><input type='submit' value='Login'></p>
+	</form>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+	<h3>Lectura Mensaje</h3>
+{% endblock %}
+	{% block content %}
+		De: {{mensaje.fromu}}</a><br>
+		Fecha : {{mensaje.date}}
+		<font color="black"><b><center>Mensaje</center></b><br> 
+			{{mensaje.texto}}</font>
+
+		<br><br>
+
+
+	{% endblock %}
+
+{% block section-navigation %}
+	<a href="/buzon/enviar">Enviar mensaje</a><br>
+	<a href="/buzon">Bandeja de Entrada</a><br>
+	<a href="/buzon/enviados">Enviados</a><br>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+	{% block title %}
+		<h4>Detalles del Art&iacute;culo</h4>
+	{% endblock %}
+
+
+	{% block content %}
+		<h2>Perfil del usuario: {{usuario.username}}</h2>
+		<p>Nombre: {{usuario.first_name}}</p>
+
+		<h3>Lista de articulos del usuario: {{usuario.username}} </h3>
+		<ul>
+			{% for dato in usuart %}
+				<li><a href="/articulo/{{dato.id}}">{{dato.titulo}}</a></li>
+			{% endfor %}
+
+		
+	{% endblock %}

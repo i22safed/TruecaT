@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block tittle %} <h3>Buzon</h3>{% endblock %}
+	{% block content %}
+
+		<form id='form' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
+			<ul>
+				<li>Para : {{form.to}}<br>
+
+				<li>Mensaje : <br>{{form.texto}}
+			</ul>
+			<p><input type='submit' value='Enviar'></p>
+		</form>
+	{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+	{% block title %}
+		<h4>Buzon de Entrada</h4>
+	{% endblock %}
+{% block content %}
+	<font size="6" color="blue">Tus mensajes recibidos</font><br><br>
+	{% if recibidos %}
+		Mensaje de: 
+		<ul>
+			{% for Mensaje in recibidos %}
+				<li><a href="/buzon/leer/{{Mensaje.id}}">{{Mensaje.fromu}}</a></li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		No tiene mensajes. <br>
+	{% endif %}
+
+
+{% endblock %}
+
+{% block section-navigation %}
+
+	<div id=left-navigation>
+	<a href="/buzon/enviar">Enviar mensaje</a><br>
+	<a href="/buzon">Bandeja de Entrada</a><br>
+	<a href="/buzon/enviados">Enviados</a><br>
+	</div>
+{% endblock %}

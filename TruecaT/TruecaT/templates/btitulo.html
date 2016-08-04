@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block tittle %}
+
+	<h4>Lista de art&iacute;culos por provincia:</h4>
+
+{% endblock %}
+
+{% block content %}
+
+		{% if articulo %}
+
+		<ul>
+			{% for dato in articulo %}
+				<li><a href="/articulo/{{dato.id}}">{{dato.titulo}}</a></li>
+			{% endfor %}
+		</ul>
+		{% else %}
+
+		<h3>No hay anuncios que contengan ese t&iacute;tulo.</h3>
+
+		{% endif %}
+
+{% endblock %}

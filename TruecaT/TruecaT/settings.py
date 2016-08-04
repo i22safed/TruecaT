@@ -94,4 +94,12 @@ TEMPLATE_DIRS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+
+SITE_ID = 1
+
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(RUTA_PROYECTO,"static"),
+    )

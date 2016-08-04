@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+	{% block title %}<h2>Publica tu comentario</h2>{% endblock %}
+
+	{% block content %}
+		<form id='formucomentario' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
+			<table class='formTable'>{{formucomentario.as_p}}</table>
+			<p><input type='submit' value='Confirmar'/></p>
+		</form>
+
+	{% endblock %}

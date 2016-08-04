@@ -28,15 +28,15 @@
 		<b>Teléfono de contacto:</b> {{articulo.numero}}<br>
 		<b>Correo de contacto:</b> {{articulo.usuario.email}}<br>
 
-
-
+		
+			
 
 
 			<form action="/modificar/{{articulo.id}}"><input type="submit" value=Modificar></form margin=0>
 			<form action="/eliminar/{{articulo.id}}"><input type="submit" value=Eliminar></form>
-
+		
 			{% endif %}
-
+		
 
 		<h3>Comentarios</h3>
 		{% for item in comentarios %}
@@ -50,5 +50,5 @@
 		{% endfor %}
 			{% if user.is_authenticated %}
 				<br><form action="/comentario/{{articulo.id}}"><input type="submit" value="Nuevo comentario"r></form>
-	{% endif %}
+	{% endif %}	
 	{% endblock %}

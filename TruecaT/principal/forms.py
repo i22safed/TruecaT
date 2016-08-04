@@ -36,7 +36,7 @@ class ComentarioForm(ModelForm):
         model = Comentario
         exclude = ['usuario','fecha','articulo']
 
-class NuevoMensaje(ModelForm):
+class nuevomensaje(ModelForm):
     class Meta:
         model = Mensaje
 

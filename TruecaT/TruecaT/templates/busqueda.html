@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+	<h4>B&uacute;squeda seg&uacute;n campos</h4>
+
+{% endblock %}
+
+{% block content %}
+
+		<h3>B&uacute;squeda por t&iacute;tulo:</h3>
+	<form action='/btitulo' method='get' role='search'>
+			<input type="text" name="titulo">
+			<p><input type='submit' value='Buscar'/></p>
+		</form>
+
+	<h3>B&uacute;squeda por provincia:</h3>
+	<form action='/bprovincia' method='get' role='search'>
+			<select name='provincia'>
+				{% for prov in provincia %}
+				<option value='{{prov.nombre}}'>{{prov.nombre}}</option>
+				{% endfor %}
+			<p><input type='submit' value='Buscar'/></p>
+		</form>
+
+	<h3>B&uacute;squeda por categor&iacute;a:</h3>
+	<form action='/bcategoria' method='get' role='search'>
+			<select name='categoria'>
+				{% for cat in categoria %}
+				<option value='{{cat.nombre}}'>{{cat.nombre}}</option>
+				{% endfor %}
+			<p><input type='submit' value='Buscar'/></p>
+		</form>
+{% endblock %}

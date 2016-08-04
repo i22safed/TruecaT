@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.css">
+    <link rel="stylesheet" href='{{STATIC_URL}}css/base.css'>
 
-	<title>TruecaT - Trueques y algo mas</title>
+	<title>Trueca T - Trueques y más</title>
 </head>
 
 <body>
@@ -10,20 +13,17 @@
 	<div id="header">
 		{% block tpagina %}
 
-    <h1>Trueca T</h1>
+    <img src="{{STATIC_URL}}/media/iconos/app.png" width="1012px" height="194px%" align=center>
 
-		{% endblock %}
+    {% endblock %}
 	</div>
-
 	<div id="seccion">
 		{% block title %}
 
 		{% endblock %}
 	</div>
-
 	<div id="navigation">
-
-    {% block sidebar %}
+		{% block sidebar %}
 		<ul>
 			<li><b><a href="/">Inicio</a></b></li>
 			<li><b><a href="/articulos">Anuncios</a></b></li>
@@ -63,7 +63,7 @@
 		</div>
 		<div id="footer">
 			{% block footer %}
-			Copyright © Site David Sanchez Fernandez, 2015-2016
+			Copyright © Site David Sánchez Fernández, 2015-2016
 			{% endblock %}
 		</div>
 	</div>

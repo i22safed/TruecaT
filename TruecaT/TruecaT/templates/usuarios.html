@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+
+	<h4>Lista de art&iacute;culos para cambiar</h4>
+
+{% endblock %}
+
+{% block content %}
+	<a href='/nuevousuario'>Registrarse
+	<img src='/media/iconos/anadir.png' width="30px" height="30px">
+	</a>
+	<h3>Listado de todos los usuarios:</h3>
+		<ul>
+			{% for dato in usuarios %}
+				<li><a href="/usuario/{{dato.id}}">{{dato.username}}</a></li>
+			{% endfor %}
+		</ul>
+	{% if usuarios.has_previous %}
+		<a href="?page={{usuarios.previous_page_number}}"><img src='/media/iconos/prev.png' width="30px" height="30px"></a>
+	{% endif %}
+	<span>Pagina {{usuarios.number}} de {{usuarios.paginator.num_pages}}</span>
+	{% if usuarios.has_next %}
+		<a href="?page={{usuarios.next_page_number}}"><img src='/media/iconos/next.png' width="30px" height="30px"></a>
+	{% endif %}
+{% endblock %}
