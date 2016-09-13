@@ -100,6 +100,12 @@ SITE_ID = 1
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT=''
+
 STATICFILES_DIRS = (
     os.path.join(RUTA_PROYECTO,"static"),
     )
+
+MEDIA_ROOT = os.path.join(RUTA_PROYECTO, 'multimedia')
+
+MEDIA_URL = '/multimedia/'

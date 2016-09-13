@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block title %}
 
@@ -8,7 +8,7 @@
 
 {% block content %}
 	<a href='/nuevousuario'>Registrarse
-	<img src='/media/iconos/anadir.png' width="30px" height="30px">
+	<img src='/media/iconos/gimemore.png' width="30px" height="30px">
 	</a>
 	<h3>Listado de todos los usuarios:</h3>
 		<ul>
@@ -17,10 +17,10 @@
 			{% endfor %}
 		</ul>
 	{% if usuarios.has_previous %}
-		<a href="?page={{usuarios.previous_page_number}}"><img src='/media/iconos/prev.png' width="30px" height="30px"></a>
+		<a href="?page={{usuarios.previous_page_number}}"><img src='/media/iconos/paunlao.png' width="30px" height="30px"></a>
 	{% endif %}
 	<span>Pagina {{usuarios.number}} de {{usuarios.paginator.num_pages}}</span>
 	{% if usuarios.has_next %}
-		<a href="?page={{usuarios.next_page_number}}"><img src='/media/iconos/next.png' width="30px" height="30px"></a>
+		<a href="?page={{usuarios.next_page_number}}"><img src='/media/iconos/palotrolao.png' width="30px" height="30px"></a>
 	{% endif %}
 {% endblock %}

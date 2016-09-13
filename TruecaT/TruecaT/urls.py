@@ -47,4 +47,4 @@ urlpatterns = patterns('',
 	url(r'^buzon/leer/(?P<id_mensaje>\d+)$','principal.views.leermensaje'),
 	url(r'^buzon/enviados$','principal.views.enviados'),
 
-)x
+)
